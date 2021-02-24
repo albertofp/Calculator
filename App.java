@@ -38,7 +38,7 @@ public class Functions{
     public static double Add(double n1, double n2) {
         return (n1 + n2);
     }
-    
+
     public static double Subtract(double n1, double n2){
         return (n1 - n2);
     }
@@ -58,22 +58,21 @@ public class Functions{
 
         System.out.println("Type in the value to be converted:");
         double conversionValue = scanner.nextdouble();
-    
-    
+
+
         switch(conversionOption){
             case 1:
-                double result = 
+                double tempF = conversionValue * (9/5) + 32;
+                return tempF;
                 break;
 
             case 2:
-                double result = (conversionValue - 32) / 18;
+                double tempC = (conversionValue - 32) / 18;
+                return tempC;
                 break;
 
             default:
                 System.out.println("Error! Select options 1 or 2.");
         }
-
-        return (result);
     }
 }
-
