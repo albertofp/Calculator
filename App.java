@@ -34,7 +34,7 @@ public class App {
             }
         } while (functionSelection <= 0);
         System.out.println(functionSelection); //for debugging only
-
+        input.close();
     }
 
 }

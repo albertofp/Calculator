@@ -44,5 +44,4 @@ public class CalcFunctions(){
                 System.out.println("Error! Select options 1 or 2.");
         }
     }
-}
 
