@@ -1,7 +1,7 @@
 public class CalcFunctions(){
 
     public static int Round(int n1){
-        return Math.round(n1 * 100.0) / 100.0;
+        return (int) (Math.round(n1 * 100.0) / 100.0);
     }
 
     public static int Add(int n1, int n2) {
@@ -44,4 +44,3 @@ public class CalcFunctions(){
                 System.out.println("Error! Select options 1 or 2.");
         }
     }
-
