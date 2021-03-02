@@ -11,6 +11,7 @@ import java.util.Scanner;
 
 public class App {
 
+
     public static void main(String[] args){
         int functionSelection;
 
@@ -34,6 +35,7 @@ public class App {
                 functionSelection = 0;
                 input.next();
             }
+
         } while (functionSelection == 7);
         System.out.println(functionSelection); //for debugging only
 
@@ -75,8 +77,12 @@ public class App {
                 break;
 
             case 5:
-                CalcFunctions.Convert();
-                System.out.println("Result :" + Convert());
+                System.out.println("Select [1] to convert from C° to F°:\n");
+                System.out.println("Select [2] to convert from F° to C°:\n");
+                int conversionOption = input.nextInt();
+                
+                System.out.println("Result :" + CalcFunctions.Convert(conversionOption));
+
                 break;
             
 
