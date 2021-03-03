@@ -16,8 +16,8 @@ public class App {
 
 
     //Rounds the final value before it is displayed
-    static int Round(int n1){
-        return (int) (Math.round(n1 * 100.0) / 100.0);
+    static double Round(double n1){
+        return (double) (Math.round(n1 * 100.0) / 100.0);
     }
 
     public static void main(String[] args) {
@@ -35,7 +35,7 @@ public class App {
         System.out.println("[5] Celsius/Fahrenheit converter \n");
         System.out.println("[6] Exit calculator \n");
         functionSelection = input.nextInt();
-        System.out.println("Input : " + functionSelection);
+        System.out.println("Selected : " + functionSelection);
 
         switch (functionSelection) {
             case 1:
@@ -55,7 +55,7 @@ public class App {
                 System.out.println("Select the second number:");
                 int sub2 = input.nextInt();
 
-                result = sub1 + sub2;
+                result = sub1 - sub2;
 
                 System.out.println("Result :" + result);
                 break;
@@ -72,12 +72,12 @@ public class App {
                 break;
             
             case 4:
-                System.out.println("Select the first number():");
+                System.out.println("Select the first number:");
                 int div1 = input.nextInt();
                 System.out.println("Select the second number:");
                 int div2 = input.nextInt();
 
-                result = Round(div1 / div2); 
+                result = div1 / div2; 
 
                 System.out.println("Result :" + result);
                 break;
@@ -93,12 +93,12 @@ public class App {
 
                     switch(conversionOption){
                         case 1:
-                            int tempF = conversionValue * (9/5) + 32;
+                            double tempF =( conversionValue * 1.8 )+ 32;
                             result =  Round(tempF);
                             break;
 
                         case 2:
-                            int tempC = (conversionValue - 32) / 18;
+                            double tempC = (conversionValue - 32) / 18;
                             result= Round(tempC);
                             break;
 
@@ -110,7 +110,11 @@ public class App {
 
                 break;
             
-
+            
+            case 6:
+                System.out.println("Closing calculator...");
+                break;
+            
             default: 
             System.out.println("Error! Select one of the options above.");
             break;
