@@ -11,14 +11,22 @@ import java.util.Scanner;
 
 public class App {
 
+    //Holds the final value
+    static double result = 0;
 
-    public static void main(String[] args){
-        int functionSelection;
+
+    //Rounds the final value before it is displayed
+    static int Round(int n1){
+        return (int) (Math.round(n1 * 100.0) / 100.0);
+    }
+
+    public static void main(String[] args) {
+        int functionSelection; //Controls which calculator function is to be executed
 
         System.out.println("Simple Calculator \n by albertofp");
         System.out.println("\n\n");
         System.out.println("Select the function you want to use\n");
-        Scanner input = new Scanner(System.in);
+        Scanner input = new Scanner(System.in); //Scanner() is used to take user input
 
         System.out.println("[1] Addition \n");
         System.out.println("[2] Subtraction \n");
@@ -28,25 +36,17 @@ public class App {
         System.out.println("[6] Exit calculator \n");
         functionSelection = input.nextInt();
         System.out.println("Input : " + functionSelection);
-        do {
-            
-            while((!input.hasNextInt()) || functionSelection > 6 || functionSelection < 0 ) {
-                System.out.println("Error! Please select one of the options above.");
-                functionSelection = 0;
-                input.next();
-            }
 
-        } while (functionSelection == 7);
-        System.out.println(functionSelection); //for debugging only
-
-        switch(functionSelection){
+        switch (functionSelection) {
             case 1:
                 System.out.println("Select the first number:");
                 int add1 = input.nextInt();
                 System.out.println("Select the second number:");
                 int add2 = input.nextInt();
 
-                System.out.println("Result :" + CalcFunctions.Add(add1,add2));
+                result = add1 + add2;
+
+                System.out.println("Result :" + result);
                 break;
 
             case 2:
@@ -55,7 +55,9 @@ public class App {
                 System.out.println("Select the second number:");
                 int sub2 = input.nextInt();
 
-                System.out.println("Result :" + CalcFunctions.Subtract(sub1,sub2));
+                result = sub1 + sub2;
+
+                System.out.println("Result :" + result);
                 break;
             
             case 3:
@@ -64,7 +66,9 @@ public class App {
                 System.out.println("Select the second number:");
                 int mult2 = input.nextInt();
 
-                System.out.println("Result :" + CalcFunctions.Multiply(mult1,mult2));
+                result = mult1 * mult2;
+
+                System.out.println("Result :" + result);
                 break;
             
             case 4:
@@ -73,7 +77,9 @@ public class App {
                 System.out.println("Select the second number:");
                 int div2 = input.nextInt();
 
-                System.out.println("Result :" + CalcFunctions.Divide(div1,div2));
+                result = Round(div1 / div2); 
+
+                System.out.println("Result :" + result);
                 break;
 
             case 5:
@@ -81,12 +87,33 @@ public class App {
                 System.out.println("Select [2] to convert from F° to C°:\n");
                 int conversionOption = input.nextInt();
                 
-                System.out.println("Result :" + CalcFunctions.Convert(conversionOption));
+                System.out.println("Type in the value to be converted:");
+                int conversionValue = input.nextInt();
+
+
+                    switch(conversionOption){
+                        case 1:
+                            int tempF = conversionValue * (9/5) + 32;
+                            result =  Round(tempF);
+                            break;
+
+                        case 2:
+                            int tempC = (conversionValue - 32) / 18;
+                            result= Round(tempC);
+                            break;
+
+                        default:
+                            System.out.println("Error! Select options 1 or 2.");
+                    }
+
+                System.out.println("Result :" + result);
 
                 break;
             
 
-
+            default: 
+            System.out.println("Error! Select one of the options above.");
+            break;
         }
 
 
