@@ -98,7 +98,7 @@ public class App {
                             break;
 
                         case 2:
-                            double tempC = (conversionValue - 32) / 18;
+                            double tempC = (conversionValue - 32) / 1.8;
                             result= Round(tempC);
                             break;
 
