@@ -40,46 +40,51 @@ public class App {
         switch (functionSelection) {
             case 1:
                 System.out.println("Select the first number:");
-                int add1 = input.nextInt();
+                double add1 = input.nextDouble();
                 System.out.println("Select the second number:");
-                int add2 = input.nextInt();
+                double add2 = input.nextDouble();
 
-                result = add1 + add2;
+                result = Round(add1 + add2);
 
                 System.out.println("Result :" + result);
                 break;
 
             case 2:
                 System.out.println("Select the first number:");
-                int sub1 = input.nextInt();
+                double sub1 = input.nextDouble();
                 System.out.println("Select the second number:");
-                int sub2 = input.nextInt();
+                double sub2 = input.nextDouble();
 
-                result = sub1 - sub2;
+                result = Round(sub1 - sub2);
 
                 System.out.println("Result :" + result);
                 break;
             
             case 3:
                 System.out.println("Select the first number:");
-                int mult1 = input.nextInt();
+                double mult1 = input.nextDouble();
                 System.out.println("Select the second number:");
-                int mult2 = input.nextInt();
+                double mult2 = input.nextDouble();
 
-                result = mult1 * mult2;
+                result = Round(mult1 * mult2);
 
                 System.out.println("Result :" + result);
                 break;
             
             case 4:
                 System.out.println("Select the first number:");
-                int div1 = input.nextInt();
+                double div1 = input.nextDouble();
                 System.out.println("Select the second number:");
-                int div2 = input.nextInt();
+                double div2 = input.nextDouble();
 
-                result = div1 / div2; 
+                if(div2 != 0 ){
+
+                result = Round(div1 / div2); 
 
                 System.out.println("Result :" + result);
+                }else{
+                    System.out.println("Error! Cannot divide by 0.");
+                }
                 break;
 
             case 5:
@@ -88,7 +93,7 @@ public class App {
                 int conversionOption = input.nextInt();
                 
                 System.out.println("Type in the value to be converted:");
-                int conversionValue = input.nextInt();
+                double conversionValue = input.nextDouble();
 
 
                     switch(conversionOption){
